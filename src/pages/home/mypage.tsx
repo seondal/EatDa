@@ -166,7 +166,7 @@ export default function MyPage() {
             <Image alt="character" width={32} height={32} src={next} priority />
           </div>
         </button>
-        <button />
+        <h5>{session.data?.user.userId}</h5>
       </div>
       <style jsx>{`
         .container {
@@ -267,6 +267,10 @@ export default function MyPage() {
           margin-left: auto;
           display: flex;
           align-items: center;
+        }
+
+        h5 {
+          color: ${colors.grayBackgroundSub};
         }
       `}</style>
     </>
