@@ -1,10 +1,13 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { ic_calendar } from "../../assets/icon";
 import colors from "../../assets/styles";
 import { Get } from "../../hooks/Fetch";
 import { selectToken } from "../../store/tokenSlice";
 
 interface WeeklyDataType {
+  name: string;
   start: string;
   end: string;
   low: number;
@@ -49,6 +52,10 @@ export default function WeeklySummary({ duration }: { duration?: boolean }) {
       <div className="container">
         {duration && (
           <>
+            <div className="big-title">
+              {weeklyData?.name}님의 <br />
+              주간보고서 입니다
+            </div>
             <div className="duration">{weeklyData && <>{durationText}</>}</div>
             <div className="explain">
               1주일간 식사 후 혈당을 기록하여 주간 분석 레포트를 발급 받아요!
@@ -76,12 +83,23 @@ export default function WeeklySummary({ duration }: { duration?: boolean }) {
                   </div>
                 ))}
               </div>
-              {!duration && <div className="mini-duration">{durationText}</div>}
+              {!duration && (
+                <div className="mini-duration">
+                  <Image src={ic_calendar} width={16} height={16} alt="" />
+                  &nbsp;
+                  {durationText}
+                </div>
+              )}
             </div>
           </>
         ) : null}
       </div>
       <style jsx>{`
+        .big-title {
+          font-size: 24px;
+          font-weight: 700;
+          padding: 10px 0px;
+        }
         .duration {
           color: ${colors.graySubTitle};
           font-weight: 500;
@@ -162,6 +180,13 @@ export default function WeeklySummary({ duration }: { duration?: boolean }) {
         }
         .level3 {
           background-color: ${sugarLevelList[2].color};
+        }
+
+        // 미니
+        .mini-duration {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
         }
       `}</style>
     </>
