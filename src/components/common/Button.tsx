@@ -205,7 +205,7 @@ export function CTA1ButtonSmall({
       <style jsx>{`
         button {
           ${CTA1Source}
-          width: 170px;
+          width: 45%;
           background: ${active ? colors.mainOrange : colors.grayBackgroundSub};
           margin: 5px;
         }
@@ -303,7 +303,7 @@ export function RadioBox({
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 330px;
+          width: 100%;
           height: 80px;
           background: ${select ? colors.mainOrange : "none"};
           color: ${select ? colors.grayWhite : colors.graySubTitle};
@@ -344,7 +344,7 @@ export function CheckBox({ name, text, value, select, onChange }: CheckBoxI) {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 350px;
+          width: 100%;
           height: 54px;
           background: ${select ? colors.mainOrange : "none"};
           border: 1px solid ${colors.grayBackgroundSub};

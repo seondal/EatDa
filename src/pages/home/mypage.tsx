@@ -101,21 +101,34 @@ export default function MyPage() {
           <>
             <div className="info">
               <div className="infoGroup">
+                <div className="infoStyle">
                 <div className="infoItem">활동량</div>
                 <div className="infoVal">
                   {typeof myData?.activity === "number"
                     ? activityData[myData?.activity]
                     : ""}
                 </div>
+                </div>
               </div>
               <div className="line"></div>
               <div className="infoGroup">
+                <div className="infoStyle">
                 <div className="infoItem">알레르기</div>
                 <div className="infoVal">
-                  {myData?.allergy?.map((allergy, idx) => (
+                  {/* {myData?.allergy?.map((allergy, idx) => (
                     <span key={idx}>{allergy.name}, </span>
-                  ))}
+                    ))} */}
+                  {myData?.allergy?.map((allergy, idx) => {
+                    return(
+                      myData?.allergy?.length !== idx+1
+                      ?
+                      <span key={idx}>{allergy.name}, </span>
+                      :
+                      <span key={idx}>{allergy.name} </span>
+                    )
+                  })}
                 </div>
+              </div>
               </div>
             </div>
           </>
@@ -216,6 +229,11 @@ export default function MyPage() {
           padding: 0px 16px;
           width: 100%;
           align-items: center;
+          justify-content: center;
+        }
+        .infoStyle{
+          display: flex;
+          width: 90%;
         }
         .infoItem {
           font-size: 16px;
@@ -257,7 +275,7 @@ export default function MyPage() {
 
         .textButton {
           color: ${colors.grayTextBlack};
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 600;
         }
 
