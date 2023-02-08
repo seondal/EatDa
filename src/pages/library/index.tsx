@@ -1,5 +1,4 @@
-import Header from "../../components/layout/Header";
-import colors from "../../assets/styles";
+import colors, { sugarLevelColor } from "../../assets/styles";
 import PushPageButton from "../../components/common/PushPageButton";
 import { useEffect, useState } from "react";
 import { Get } from "../../hooks/Fetch";
@@ -7,9 +6,10 @@ import { useSelector } from "react-redux";
 import { selectToken } from "../../store/tokenSlice";
 import { selectUser } from "../../store/userSlice";
 import { SugarRecordType } from "../../interface/sugarRecord";
-import { btn_add, ic_measure, ic_time } from "../../assets/icon";
+import { btn_add, ic_time } from "../../assets/icon";
 import Image from "next/image";
 import Hr from "../../components/common/Hr";
+import { illust } from "../../assets/illust";
 
 interface RecordDataType {
   date: string;
@@ -42,10 +42,20 @@ export default function Library() {
         <PushPageButton name="필터" src={btn_add} page="/library/add" />
       )}
       <div className="container">
-        {recordData.length === 0 && (
+        {
+          recordData.length === 0 && (
           <div className="empty">
+            <Image
+              alt="character"
+              width={305}
+              height={76}
+              src={illust.library_empty}
+              priority
+            />
+            <div className="text">
             새로운 혈당 수치 추가를 위해
             <br />+ 버튼을 눌러주세요!
+            </div>
           </div>
         )}
         {recordData.map((day, idx) => (
@@ -61,7 +71,15 @@ export default function Library() {
                   </div>
                   <div className="content">
                     <div className="level">
-                      <Image src={ic_measure} alt="" width={16} height={16} />
+                      <div
+                        className="circle"
+                        style={{
+                          color: sugarLevelColor[data.range],
+                          fontSize: "8px",
+                        }}
+                      >
+                        ●
+                      </div>{" "}
                       &nbsp;
                       {data.level} mg/dl
                     </div>
@@ -74,7 +92,6 @@ export default function Library() {
                 </div>
               ))}
             </div>
-            <Hr />
           </div>
         ))}
       </div>
@@ -89,11 +106,19 @@ export default function Library() {
         }
         .record-style {
           width: 100%;
-
         }
         .empty {
           color: ${colors.graySubTitle};
           text-align: center;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: -150px;
+          justify-content: center;
+        }
+        .text {
+          margin-top: 10px;
         }
         .date {
           font-weight: 700;
@@ -105,7 +130,6 @@ export default function Library() {
           justify-content: space-between;
           padding: 12px;
           box-sizing: border-box;
-          width: 100%;
           height: 74px;
           border: solid 1px ${colors.blackSub};
           border-radius: 6px;
@@ -124,12 +148,18 @@ export default function Library() {
           color: white;
         }
         .level {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           font-size: 20px;
           font-weight: 700;
+          margin-bottom: 5px;
         }
         .time {
+          display: flex;
           color: ${colors.graySubTitle2};
           font-size: 14px;
+          margin-left: -2px;
         }
       `}</style>
     </>
