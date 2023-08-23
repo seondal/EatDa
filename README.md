@@ -21,6 +21,7 @@
 
 <br/>
 
+
 ## 🤼‍♂️ Team
 | Plan | Design | FrontEnd | BackEnd |
 |:-:|:-:|:-:|:-:|
@@ -37,6 +38,8 @@
 <br/>
 
 ## 📚 Stack
+<img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"/><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/><img src="https://img.shields.io/badge/Redux Toolkit-593D88?style=for-the-badge&logo=Redux&logoColor=white"/>
+
 - **Typescript** 기반
 - **NextJS**를 이용한 Server Side Rendering 
 - **Redux**를 이용한 전역 상태관리 (유저 및 필터 정보)
@@ -178,13 +181,31 @@
 
 <br/>
 
+
 ## ✨ Detail
 
-<img width="350px" align="left" src="https://user-images.githubusercontent.com/75469131/217815679-9b93948a-42c4-467c-944a-4cab1bcc2330.png"/>
-<img width="350px" align="" src="https://user-images.githubusercontent.com/75469131/217815690-1db07daa-3825-439d-8c96-85aec169bbdc.png"/>
-<img width="350px" align="left" src="https://user-images.githubusercontent.com/75469131/217815698-adcc5813-253a-4db3-aeda-45e8ce414101.png"/>
-<img width="350px" align="" src="https://user-images.githubusercontent.com/75469131/217815708-f9e06fd7-0672-4334-8723-44d0e6382979.png"/>
-<img width="350px" align="left" src="https://user-images.githubusercontent.com/75469131/217815713-046cc0d1-9e68-47bb-bd95-f3dfd6dad912.png"/>
-<img width="350px" align="" src="https://user-images.githubusercontent.com/75469131/217815715-8f2e8c19-5fc1-46d3-ba35-c5477056dfd7.png"/>
-<img width="350px" align="left" src="https://user-images.githubusercontent.com/75469131/217815718-93acbfa5-c7b5-4aa0-9ef5-1ade31efae00.png"/>
-<img width="350px" align="" src="https://user-images.githubusercontent.com/75469131/217815724-4ad4ed45-8d46-4532-8699-7064d8cd738a.png"/>
+![썸네](https://user-images.githubusercontent.com/75469131/218316964-36960537-632f-498e-b850-dd3d97fc1cb0.png)
+
+<br>
+
+## 📺 Video
+
+#### 1. 회원가입
+
+https://user-images.githubusercontent.com/75469131/226934405-652e7544-f21d-4ba3-a7d5-d27446197a4a.mp4
+
+<br>
+
+#### 2. 식단 등록
+
+https://user-images.githubusercontent.com/75469131/226935896-fa754ca3-050f-4b66-b844-e99c614a220d.mp4
+
+<br>
+
+#### 3. 혈당기록 + 식단 필터링 + 로그아
+
+https://user-images.githubusercontent.com/75469131/226936111-b437b459-6c6a-46f3-8b99-180618079e85.mp4
+
+
+<br/>
+
